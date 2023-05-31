@@ -1,7 +1,8 @@
-# aws_sensor_example
+# Dagster S3 ClickHouse Example
 
 A Dagster demo showing how to load data into ClickHouse from S3. This demo uses a sensor to watch for new files in S3. When a new file is discovered, a partition is created and a run is launched to process the new data.
 
+Video overview: https://www.loom.com/share/ad38c77796a24e439f33361849c512e9
 
 ## Getting started
 
