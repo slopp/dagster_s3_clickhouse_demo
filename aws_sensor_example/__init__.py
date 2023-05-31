@@ -1,7 +1,7 @@
 from dagster import Definitions, load_assets_from_modules, EnvVar
 
 from aws_sensor_example import assets
-from aws_sensor_example.sensors import my_s3_sensor
+from aws_sensor_example.sensors import my_s3_sensor, my_mac_notify_on_run_success
 from aws_sensor_example.resources import ClickHouseResource
 from dagster_aws.s3 import S3Resource
 
@@ -9,7 +9,7 @@ all_assets = load_assets_from_modules([assets])
 
 defs = Definitions(
     assets=all_assets,
-    sensors=[my_s3_sensor],
+    sensors=[my_s3_sensor, my_mac_notify_on_run_success],
     jobs=[assets.load_raw_data],
     resources={
         "s3": S3Resource(
