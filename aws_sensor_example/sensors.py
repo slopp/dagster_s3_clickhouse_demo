@@ -59,7 +59,7 @@ def my_s3_sensor(context, s3: S3Resource):
 def my_mac_notify_on_run_success(context: RunStatusSensorContext):
     """An example sensor that notifies us on success, use Dagster Cloud alerts for common cases"""
     _mac_notify(
-        "ClickHouse Update", f'Dagster Job "{context.dagster_run.job_name}" succeeded.'
+        "ClickHouse Update", f'Dagster Job {context.dagster_run.job_name} succeeded.'
     )
 
 
